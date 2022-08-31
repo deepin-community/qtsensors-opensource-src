@@ -1,0 +1,89 @@
+Source: qtsensors-opensource-src
+Section: libs
+Priority: optional
+Maintainer: Deepin Developer <deepin-dev@deepin.org>
+Uploaders: Deepin Packages Builder <packages@deepin.org>
+Build-Depends: debhelper-compat (= 13),
+               pkg-kde-tools,
+               qtbase5-private-dev (>= 5.15.3~),
+               qtdeclarative5-dev (>= 5.15.3~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.3~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.3~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.3~) <!nodoc>,
+                     qtbase5-doc-html (>= 5.15.3~) <!nodoc>
+Standards-Version: 4.6.0
+Homepage: https://doc.qt.io/qt-5/qtsensors-index.html
+
+Package: libqt5sensors5
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt Sensors module
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Qt Sensors module.
+
+Package: qml-module-qtsensors
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt 5 Sensors QML module
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the Qt Sensors QML module for Qt Declarative.
+
+Package: libqt5sensors5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libqt5sensors5 (= ${binary:Version}), qtbase5-dev, ${misc:Depends}
+Description: Qt 5 Sensors development files
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the header development files used for building Qt 5
+ applications using Qt Sensors library.
+
+Package: qtsensors5-examples
+Architecture: any
+Multi-Arch: same
+Section: x11
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt 5 sensors examples
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Qt 5 Sensors examples.
+
+Package: qtsensors5-doc
+Build-Profiles: <!nodoc>
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: Qt 5 Sensors documentation
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the documentation for the Qt 5 Sensors library
+ and binaries.
+
+Package: qtsensors5-doc-html
+Build-Profiles: <!nodoc>
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: Qt 5 Sensors HTML documentation
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the HTML documentation for the Qt 5 Sensors
+ libraries and binaries.

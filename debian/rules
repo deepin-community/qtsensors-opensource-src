@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export QT_SELECT := qt5
+
+%:
+	dh $@ --with pkgkde_symbolshelper
+
+override_dh_auto_configure:
+	dh_auto_configure -- QT_BUILD_PARTS+=tests
+
+override_dh_auto_build-indep:
+	dh_auto_build -Smakefile -- docs
+
+override_dh_auto_test-arch:
+	dh_auto_test -- -Ctests/auto \
+		TESTRUNNER='xvfb-run -a -s "-screen 0 1024x768x24 +extension GLX"' \
+		QT_PLUGIN_PATH=$(CURDIR)/plugins LD_LIBRARY_PATH=$(CURDIR)/lib
+
+# Do not attempt to run tests during indep build
+override_dh_auto_test-indep:
+
+override_dh_auto_install-arch:
+	dh_auto_install
+
+	# Reproducible builds: remove build paths from prl files.
+	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt5Sensors.prl
+	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt5/examples/sensors/grue/libgruesensor.prl
+
+override_dh_auto_install-indep:
+	make INSTALL_ROOT=$(CURDIR)/debian/tmp install_docs
