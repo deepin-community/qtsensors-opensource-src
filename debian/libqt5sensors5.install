@@ -1,5 +1,5 @@
-usr/lib/*/libQt5Sensors.so.5*
-usr/lib/*/qt5/plugins/sensorgestures/libqtsensorgestures_counterplugin.so
-usr/lib/*/qt5/plugins/sensorgestures/libqtsensorgestures_plugin.so
-usr/lib/*/qt5/plugins/sensorgestures/libqtsensorgestures_shakeplugin.so
-usr/lib/*/qt5/plugins/sensors/libqtsensors_generic.so
+usr/lib/${DEB_HOST_MULTIARCH}/libQt5Sensors.so.5*
+usr/lib/${DEB_HOST_MULTIARCH}/qt5/plugins/sensorgestures/libqtsensorgestures_counterplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt5/plugins/sensorgestures/libqtsensorgestures_plugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt5/plugins/sensorgestures/libqtsensorgestures_shakeplugin.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt5/plugins/sensors/libqtsensors_generic.so

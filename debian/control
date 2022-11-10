@@ -5,14 +5,14 @@ Maintainer: Deepin Developer <deepin-dev@deepin.org>
 Uploaders: Deepin Packages Builder <packages@deepin.org>
 Build-Depends: debhelper-compat (= 13),
                pkg-kde-tools,
-               qtbase5-private-dev (>= 5.15.3~),
-               qtdeclarative5-dev (>= 5.15.3~),
+               qtbase5-private-dev (>= 5.15.7~),
+               qtdeclarative5-dev (>= 5.15.7~),
                xauth <!nocheck>,
                xvfb <!nocheck>
-Build-Depends-Indep: qdoc-qt5 (>= 5.15.3~) <!nodoc>,
-                     qhelpgenerator-qt5 (>= 5.15.3~) <!nodoc>,
-                     qtattributionsscanner-qt5 (>= 5.15.3~) <!nodoc>,
-                     qtbase5-doc-html (>= 5.15.3~) <!nodoc>
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.7~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.7~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.7~) <!nodoc>,
+                     qtbase5-doc-html (>= 5.15.7~) <!nodoc>
 Standards-Version: 4.6.0
 Homepage: https://doc.qt.io/qt-5/qtsensors-index.html
 
